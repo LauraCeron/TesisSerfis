@@ -16,6 +16,11 @@
         <servlet-name>datMateria</servlet-name>
         <servlet-class>CONTROLLER.datMateria</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>datExamen</servlet-name>
         <url-pattern>/datExamen</url-pattern>
@@ -32,9 +37,22 @@
         <servlet-name>datMateria</servlet-name>
         <url-pattern>/datMateria</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+    
+    <context-param>
+        <param-name>primefaces.flick</param-name>
+        <param-value>le-frog</param-value>
+</context-param>
+    
 </web-app>
