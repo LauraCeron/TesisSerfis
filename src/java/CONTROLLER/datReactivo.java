@@ -5,14 +5,8 @@
  */
 package CONTROLLER;
 
-import BEAN.BeanArea;
-import BEAN.BeanMateria;
-import MODEL.clsArea;
-import MODEL.clsMateria;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Lau Cerón
+ * @author Mary
  */
-public class datMateria extends HttpServlet {
+public class datReactivo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,7 +29,19 @@ public class datMateria extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet datReactivo</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet datReactivo at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -64,46 +70,7 @@ public class datMateria extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       response.setContentType("text/html;charset=UTF-8");
-       
-       //tomar los datos del formulario jsp
-       String nombreMateria= request.getParameter("nombreMateria");
-       Boolean estado= Boolean.parseBoolean(request.getParameter("estado"));
-       String codArea= request.getParameter("cmbArea");
-       
-       //obtener cod area
-       clsArea area= new clsArea();
-       area.setCodArea(codArea);
-       
-        clsMateria materia = new clsMateria();
-        materia.setCodMateria("0000000002");
-        materia.setCodArea(area);
-        materia.setNombreMateria(nombreMateria);
-        
-       // materia.setCodArea((clsArea) codArea);
-        
-       materia.setEstado(estado);
-        BeanMateria beanMateria = new BeanMateria();
-        try {
-            beanMateria.guargar(materia);
-        } catch (Exception ex) {
-            Logger.getLogger(datArea.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-       
-       
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet datMateria</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet datMateria at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        processRequest(request, response);
     }
 
     /**
