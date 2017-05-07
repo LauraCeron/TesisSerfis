@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>datExamen</servlet-name>
+        <servlet-class>CONTROLLER.datExamen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datAsignacion</servlet-name>
+        <servlet-class>CONTROLLER.datAsignacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datArea</servlet-name>
+        <servlet-class>CONTROLLER.datArea</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>datMateria</servlet-name>
+        <servlet-class>CONTROLLER.datMateria</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>datExamen</servlet-name>
+        <url-pattern>/datExamen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datAsignacion</servlet-name>
+        <url-pattern>/datAsignacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datArea</servlet-name>
+        <url-pattern>/datArea</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>datMateria</servlet-name>
+        <url-pattern>/datMateria</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
