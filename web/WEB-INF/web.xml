@@ -61,4 +61,9 @@
     <welcome-file-list>
         <welcome-file>index.faces</welcome-file>
     </welcome-file-list>
+    
+    <context-param>
+        <param-name>primefaces.flick</param-name>
+        <param-value>le-frog</param-value>
+</context-param>
 </web-app>
